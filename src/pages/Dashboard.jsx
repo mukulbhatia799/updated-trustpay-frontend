@@ -14,10 +14,10 @@ export function Dashboard() {
     // verifying jwtToken and getting token user data.
     useEffect(() => {
         axios
-            .get(`http://localhost:3000/api/v1/user/verifytoken?jwtToken=${jwtToken.split(' ')[1]}`)
+            .get(`https://updated-trustpay-backend.onrender.com/api/v1/user/verifytoken?jwtToken=${jwtToken.split(' ')[1]}`)
             .then((response) => {
                 console.log(`response.data.userId: ${response.data.userId}`);
-                axios.get(`http://localhost:3000/api/v1/user/finduser?id=${response.data.userId}`)
+                axios.get(`https://updated-trustpay-backend.onrender.com/api/v1/user/finduser?id=${response.data.userId}`)
                 .then((res) => {
                     setLoggedInUser(() => res.data.user);
                 })
@@ -27,7 +27,7 @@ export function Dashboard() {
     // getting logged in user balance.
     useEffect(() => {
         axios
-            .get(`http://localhost:3000/api/v1/account/balance`, {
+            .get(`https://updated-trustpay-backend.onrender.com/api/v1/account/balance`, {
                 headers: {
                     'Authorization': jwtToken,  // Example: Sending a JWT token
                 }

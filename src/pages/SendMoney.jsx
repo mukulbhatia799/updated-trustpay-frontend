@@ -52,7 +52,7 @@ export const SendMoney = () => {
                         {checkInsufficientBal ? <div className="text-red-600">*Insufficient Balance</div> : <></>}
                         <button onClick={async () => {
                             await axios
-                                .post(`http://localhost:3000/api/v1/account/transfer`, 
+                                .post(`https://updated-trustpay-backend.onrender.com/api/v1/account/transfer`, 
                                     {
                                         amount: amount,
                                         to: receiverID

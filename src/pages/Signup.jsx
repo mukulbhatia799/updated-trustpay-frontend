@@ -44,7 +44,7 @@ export function Signup() {
                     }
                     else {
                         await axios
-                        .post("http://localhost:3000/api/v1/user/signup", {
+                        .post("https://updated-trustpay-backend.onrender.com/api/v1/user/signup", {
                             firstName,
                             lastName,
                             username,
