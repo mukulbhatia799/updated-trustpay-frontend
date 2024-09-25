@@ -65,6 +65,7 @@ export const SendMoney = () => {
                                 )
                                 .then((response) => {
                                     setCheckInsufficientBal(false);
+                                    // window.location.href = '/dashboard';
                                     // navigate("/dashboard");
                                     window.location.href = '/dashboard';  // Causes a full reload of the page, as we want to update the userBalance in dashboard page. So, if we use useNavigate(), then page doesn't loads instead only the part or components changes which are required. As we have used useEffect(, []) with emtpy[], so this only works when page loads. Thatswhy it's required to load the dashboard page.
                                 })
